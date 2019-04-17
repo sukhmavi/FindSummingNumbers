@@ -5,32 +5,57 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace assignment_5
+namespace Assignment_5
 {
     class Program
     {
         static void Main(string[] args)
-        { new GenerateList().Run(57); }
-        
-        }
-    class GenerateList
-    { const int LEN = 100;
-        ArrayList listQ;
-        public void Run(int AddUpTonumbers)
         {
-            Random r = new Random();
-
-            listQ = new ArrayList();
-            for (int i = 0; i < LEN; i++) { listQ.Add(r.Next(100)); }
-            this.findTwoNumbersThatAddUpTo(AddUpTonumbers);
+            new GeneralList().Run(57);
         }
 
-        public void findTwoNumbersThatAddUpTo(int addUpTonumbers)
+
+        class GeneralList
         {
-            throw new NotImplementedException();
+            const int LEN = 100;
+            public ArrayList ListQ;
+            int AddUpToNumber = 0;
+            public void Run(int AddUpToNumber)
+
+            {
+                Random r = new Random();
+                ListQ = new ArrayList();
+                for (int i = 0; i < LEN; i++)
+                {
+                    ListQ.Add(r.Next(100));
+                }
+                this.findTwoNumbersThatAddUpTo();
+            }
+
+            public void findTwoNumbersThatAddUpTo()
+            {
+                foreach (int num1 in ListQ)
+                {
+                    int a, b;
+                    a = num1;
+                    foreach (int num2 in ListQ)
+                    {
+                        b = num2;
+                        if (a + b == 57)
+                        {
+                            Console.WriteLine("The Perfect match is found. Numbers are: " + a + " " + b);
+                        }
+                    }
+
+
+                }
+                Console.ReadLine();
+            }
+
+
+
+
         }
     }
-    
-    }
-
+}
 
