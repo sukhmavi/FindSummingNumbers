@@ -9,7 +9,15 @@ namespace assignment_5
     class Program
     {
         static void Main(string[] args)
-        {
+        { new GenerateList().Run(57); }
+        
         }
+    class GenerateList
+    { const int LEN = 100;
+        ArrayList listQ;
+        public void Run(int AddUpTonumbers) { 
+
+}
+    }
     }
 }
