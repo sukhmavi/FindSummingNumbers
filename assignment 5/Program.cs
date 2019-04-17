@@ -15,7 +15,12 @@ namespace assignment_5
     class GenerateList
     { const int LEN = 100;
         ArrayList listQ;
-        public void Run(int AddUpTonumbers) { 
+        public void Run(int AddUpTonumbers) {
+            Random r = new Random();
+
+            listQ = new ArrayList();
+            for (int i =0; i < LEN; i++) { listQ.Add(r.Next(100)); }
+            this.findTwoNumbersThatAddUpTo(AddUpTonumbers);
 
 }
     }
